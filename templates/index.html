@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Date Invitation 💗</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Decorative hearts -->
+        <div class="floating-heart heart-1">♡</div>
+        <div class="floating-heart heart-2">♡</div>
+        <div class="floating-heart heart-3">♡</div>
+        <div class="floating-heart heart-4">♡</div>
+
+        <!-- =========================
+             SCREEN 1
+        ========================== -->
+        <section class="screen active" id="welcomeScreen">
+
+            <div class="card">
+
+                <div class="image-wrapper">
+                    <video class="profile-image" autoplay muted loop playsinline>
+                        <source src="{{ url_for('static', filename='videos/cat.mp4') }}" type="video/mp4">
+                        Your browser does not support video.
+                    </video>
+                </div>
+
+                <p class="small-title">
+                    A LITTLE QUESTION...
+                </p>
+
+                <h1>
+                    Will you go on a
+                    <span>date with me?</span> Nalki 💗
+                </h1>
+
+                <p class="description">
+                    I have something special planned...
+                    but first, I need your answer.
+                </p>
+
+                <div class="button-area">
+
+                    <button class="yes-button" id="yesButton">
+                        YES ❤️
+                    </button>
+
+                    <button class="no-button" id="noButton">
+                        NO...
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCREEN 2 - DATE
+        ========================== -->
+        <section class="screen" id="dateScreen">
+
+            <div class="card">
+
+                <div class="emoji-icon">
+                    📅
+                </div>
+
+                <p class="small-title">
+                    STEP 01
+                </p>
+
+                <h2>
+                    So... when are you free?
+                </h2>
+
+                <p class="description">
+                    Pick a day that works for you 💕
+                </p>
+
+                <div class="input-group">
+
+                    <label for="dateInput">
+                        Pick a date
+                    </label>
+
+                    <input type="date" id="dateInput">
+
+                </div>
+
+                <button class="primary-button" id="dateNextButton">
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCREEN 3 - TIME
+        ========================== -->
+        <section class="screen" id="timeScreen">
+
+            <div class="card">
+
+                <div class="emoji-icon">
+                    🕐
+                </div>
+
+                <p class="small-title">
+                    STEP 02
+                </p>
+
+                <h2>
+                    What time works for you?
+                </h2>
+
+                <p class="description">
+                    Choose your perfect time ✨
+                </p>
+
+                <div class="time-options">
+
+                    <button class="time-button" data-time="5:00 PM">
+                        5:00 PM
+                    </button>
+
+                    <button class="time-button" data-time="6:00 PM">
+                        6:00 PM
+                    </button>
+
+                    <button class="time-button" data-time="7:00 PM">
+                        7:00 PM
+                    </button>
+
+                    <button class="time-button" data-time="8:00 PM">
+                        8:00 PM
+                    </button>
+
+                </div>
+
+                <button class="primary-button" id="timeNextButton">
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCREEN 4 - FOOD
+        ========================== -->
+        <section class="screen" id="foodScreen">
+
+            <div class="card">
+
+                <div class="emoji-icon">
+                    🍽️
+                </div>
+
+                <p class="small-title">
+                    STEP 03
+                </p>
+
+                <h2>
+                    What are we feeling?
+                </h2>
+
+                <p class="description">
+                    Pick something delicious 😋
+                </p>
+
+                <div class="food-options">
+
+                    <button class="food-button" data-food="Pizza 🍕">
+                        <span>🍕</span>
+                        <strong>Pizza</strong>
+                    </button>
+
+                    <button class="food-button" data-food="Sushi 🍣">
+                        <span>🍣</span>
+                        <strong>Sushi</strong>
+                    </button>
+
+                    <button class="food-button" data-food="Burgers 🍔">
+                        <span>🍔</span>
+                        <strong>Burgers</strong>
+                    </button>
+
+                    <button class="food-button" data-food="Pasta 🍝">
+                        <span>🍝</span>
+                        <strong>Pasta</strong>
+                    </button>
+
+                    <button class="food-button" data-food="Tacos 🌮">
+                        <span>🌮</span>
+                        <strong>Tacos</strong>
+                    </button>
+
+                    <button class="food-button" data-food="Ramen 🍜">
+                        <span>🍜</span>
+                        <strong>Ramen</strong>
+                    </button>
+
+                </div>
+
+                <button class="primary-button" id="foodNextButton">
+                    See our plan 💌
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCREEN 5 - FINAL
+        ========================== -->
+        <section class="screen" id="finalScreen">
+
+            <div class="card final-card">
+
+                <div class="final-heart">
+                    💗
+                </div>
+
+                <p class="small-title">
+                    IT'S A DATE!
+                </p>
+
+                <h1>
+                    You said YES! 🥹
+                </h1>
+
+                <p class="final-message">
+                    I'm so glad you didn't say no...
+                </p>
+
+                <div class="date-summary">
+
+                    <div class="summary-item">
+                        <span>📅</span>
+
+                        <div>
+                            <small>DATE</small>
+                            <strong id="finalDate">
+                                —
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-item">
+                        <span>🕐</span>
+
+                        <div>
+                            <small>TIME</small>
+                            <strong id="finalTime">
+                                —
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-item">
+                        <span>🍽️</span>
+
+                        <div>
+                            <small>FOOD</small>
+                            <strong id="finalFood">
+                                —
+                            </strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="closing-message">
+                    Be ready... I'm coming to get you. ❤️
+                </p>
+
+                <button class="restart-button" id="restartButton">
+                    Start Again ↻
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

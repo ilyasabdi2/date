@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #fce4ec,
+        #f8e8ff
+    );
+    color: #3b2630;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    position: relative;
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    z-index: 2;
+}
+
+.screen.active {
+    display: block;
+    animation: screenIn 0.5s ease;
+}
+
+@keyframes screenIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(100, 50, 80, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.image-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(
+        135deg,
+        #ff8fab,
+        #d98cff
+    );
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f8dce7;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #c45a82;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: 38px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+h1 span {
+    color: #d64f82;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #806872;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.button-area {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.yes-button,
+.no-button {
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.yes-button {
+    background: #e85d88;
+    color: white;
+    box-shadow: 0 8px 20px rgba(232, 93, 136, 0.3);
+}
+
+.yes-button:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+.no-button {
+    background: #f4edf1;
+    color: #76616b;
+}
+
+.no-button:hover {
+    transform: translateX(20px);
+}
+
+
+/* =========================
+   EMOJI ICON
+========================= */
+
+.emoji-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group {
+    text-align: left;
+    margin: 25px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #5c424d;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ead4dd;
+    border-radius: 15px;
+    background: #fff9fb;
+    color: #4b343e;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #df7197;
+    box-shadow: 0 0 0 3px rgba(223, 113, 151, 0.12);
+}
+
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primary-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px;
+    background: #d95782;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(217, 87, 130, 0.25);
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   TIME OPTIONS
+========================= */
+
+.time-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.time-button {
+    padding: 15px;
+    background: #fff7fa;
+    border: 2px solid #f0dbe3;
+    border-radius: 15px;
+    color: #654752;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.time-button:hover,
+.time-button.selected {
+    background: #f8d6e1;
+    border-color: #d95782;
+    color: #b53e68;
+}
+
+
+/* =========================
+   FOOD OPTIONS
+========================= */
+
+.food-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.food-button {
+    min-height: 105px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #fff8fa;
+    border: 2px solid #f0dbe3;
+    border-radius: 18px;
+    color: #654752;
+}
+
+.food-button span {
+    font-size: 32px;
+}
+
+.food-button strong {
+    font-size: 14px;
+}
+
+.food-button:hover,
+.food-button.selected {
+    background: #f8d6e1;
+    border-color: #d95782;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.final-heart {
+    font-size: 65px;
+    margin-bottom: 10px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+.final-message {
+    font-size: 17px;
+    color: #806872;
+    margin-bottom: 25px;
+}
+
+.date-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #fff5f8;
+}
+
+.summary-item > span {
+    font-size: 25px;
+}
+
+.summary-item small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a47a89;
+    margin-bottom: 4px;
+}
+
+.summary-item strong {
+    font-size: 15px;
+    color: #5a3d48;
+}
+
+.closing-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #c34c76;
+    line-height: 1.5;
+    margin: 25px 0;
+}
+
+.restart-button {
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid #e0b7c6;
+    color: #a94e70;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+    color: rgba(210, 82, 125, 0.25);
+    font-size: 60px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart-1 {
+    top: 8%;
+    left: 8%;
+    transform: rotate(-15deg);
+}
+
+.heart-2 {
+    bottom: 10%;
+    right: 8%;
+    transform: rotate(20deg);
+}
+
+.heart-3 {
+    top: 25%;
+    right: 10%;
+    font-size: 35px;
+}
+
+.heart-4 {
+    bottom: 20%;
+    left: 8%;
+    font-size: 40px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .image-wrapper {
+        width: 125px;
+        height: 125px;
+    }
+
+    .button-area {
+        flex-direction: column;
+    }
+
+    .yes-button,
+    .no-button {
+        width: 100%;
+    }
+
+    .floating-heart {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .food-options {
+        gap: 8px;
+    }
+
+    .food-button {
+        min-height: 95px;
+    }
+
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+.image-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px;
+}
